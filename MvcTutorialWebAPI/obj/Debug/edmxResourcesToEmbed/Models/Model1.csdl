@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcTutorialModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MvcTutorialEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="spGetRowsByPageNumberAndSize" ReturnType="Collection(MvcTutorialModel.spGetRowsByPageNumberAndSize_Result)">
+      <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tblProducts" EntityType="MvcTutorialModel.tblProducts" />
+    <EntitySet Name="tblUser" EntityType="MvcTutorialModel.tblUser" />
+  </EntityContainer>
+  <ComplexType Name="spGetRowsByPageNumberAndSize_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Price" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblProducts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="AccountCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="AccountLastUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>
