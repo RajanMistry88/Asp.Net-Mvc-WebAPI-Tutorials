@@ -1,8 +1,6 @@
 # Asp.Net-Mvc-WebAPI-Tutorials
 Asp.Net MVC WebAPI CRUD operation
 
-Asp.Net MVC WebAPI CRUD operation.
-
 <b>Overview</b><br>
 In this project i created simple Webservices for diffrent platform(Angular, Android, Ionic etc.) using .Net Mvc WebAPI. 
 I'm using SQL Server 2014 for the DataBase you can find the database backup file in Asp.Net Mvc CRUD Project folder MvcTutorial >> DataBase >> MvcTutorial.bak and Script file MvcTutorialscript.sql 
